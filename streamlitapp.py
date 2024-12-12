@@ -32,7 +32,8 @@ st.title("Face Mask Detection")
 uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
     image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
-    st.image(image, channels="BGR", caption="Uploaded Image", use_column_width=True)
+    st.image(image, channels="BGR", caption="Uploaded Image", use_container_width=True)
+
 
     # Choose model
     model_type = st.selectbox("Choose Model", ["SVM", "CNN"])
