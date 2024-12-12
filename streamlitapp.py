@@ -16,7 +16,7 @@ def predict_with_svm(image):
     hog_features = hog(
         resized_img, orientations=9, pixels_per_cell=(8, 8), cells_per_block=(2, 2), block_norm='L2-Hys'
     ).reshape(1, -1)
-    return cnn_model.predict(hog_features)[0]
+    return svm_model.predict(hog_features)[0] # type: ignore
 
 def predict_with_cnn(image):
     # Preprocess the image for CNN (resize and normalize)
